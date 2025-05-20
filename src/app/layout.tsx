@@ -63,7 +63,7 @@ export default function RootLayout({
                         </button>
                     </div>
                 </nav>
-                <main className='max-w-4xl mx-auto px-4 py-8'>{children}</main>
+                <main className='w-full'>{children}</main>
             </body>
         </html>
     );

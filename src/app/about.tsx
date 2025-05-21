@@ -44,9 +44,9 @@ export default function About() {
                     </motion.div>
                 </div>
 
-                {/* Tech Stack Section */}
+                {/* Tech Stack Subsection */}
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className='text-center mb-16'>
-                    <h2 className='text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-blue-600 dark:from-teal-400 dark:to-blue-400'>Tech Stack</h2>
+                    <h3 className='text-2xl font-semibold mb-4 text-teal-700 dark:text-teal-300'>Tech Stack</h3>
                     <p className='text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12'>Technologies I use to build modern applications</p>
                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto'>
                         {skills.map((skill, index) => (

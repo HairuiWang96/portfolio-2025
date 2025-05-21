@@ -51,7 +51,7 @@ export default function Resume() {
         <section id='resume' className='py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800'>
             <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className='text-center mb-16'>
-                    <h2 className='text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-blue-600 dark:from-teal-400 dark:to-blue-400'>Resume</h2>
+                    <h2 className='text-4xl font-bold mb-6'>Resume</h2>
                     <p className='text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8'>My professional journey and educational background</p>
                     <motion.a
                         href='/Resume--Hairui Wang.pdf'

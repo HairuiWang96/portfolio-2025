@@ -35,6 +35,15 @@ export default function RootLayout({
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        const element = document.querySelector(href);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            setActive(href);
+        }
+    };
+
     return (
         <html lang='en'>
             <body className='bg-background text-foreground font-sans antialiased'>
@@ -43,7 +52,7 @@ export default function RootLayout({
                     {/* Desktop Menu */}
                     <div className='hidden md:flex gap-8 text-base font-medium'>
                         {navLinks.map(link => (
-                            <a key={link.href} href={link.href} className={`relative transition-colors duration-200 ${active === link.href ? 'text-teal-600' : 'hover:text-teal-600'} group`}>
+                            <a key={link.href} href={link.href} onClick={e => handleNavClick(e, link.href)} className={`relative transition-colors duration-200 ${active === link.href ? 'text-teal-600' : 'hover:text-teal-600'} group`}>
                                 {link.label}
                                 <span
                                     className={`absolute left-0 -bottom-1 w-full h-0.5 bg-teal-600 rounded transition-all duration-300 ${

@@ -72,23 +72,22 @@ export default function Home() {
             </section>
 
             {/* Skills Section */}
-            <section className='py-20 bg-gray-50 dark:bg-gray-900'>
+            <section className='py-20 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800'>
                 <div className='container mx-auto px-4'>
-                    <h2 className='text-3xl font-bold text-center mb-12'>Tech Stack</h2>
+                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className='text-center mb-16'>
+                        <h2 className='text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-blue-600 dark:from-teal-400 dark:to-blue-400'>Tech Stack</h2>
+                        <p className='text-gray-600 dark:text-gray-300'>Technologies I use to build modern applications</p>
+                    </motion.div>
                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                         {skills.map((skill, index) => (
-                            <motion.div
-                                key={skill.name}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                whileHover={{ scale: 1.05, rotateY: 5 }}
-                                className='group relative bg-gradient-to-br p-[1px] rounded-xl overflow-hidden'
-                            >
-                                <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-90 group-hover:opacity-100 transition-opacity duration-300`} />
-                                <div className='relative bg-white dark:bg-gray-800 p-6 rounded-xl h-full flex flex-col items-center justify-center'>
-                                    <div className={`${skill.color} mb-4 transform group-hover:scale-110 transition-transform duration-300`}>{skill.icon}</div>
-                                    <h3 className='text-lg font-semibold text-gray-800 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300'>{skill.name}</h3>
+                            <motion.div key={skill.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} whileHover={{ y: -5 }} className='group relative'>
+                                <div className='absolute inset-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-105' />
+                                <div className='absolute inset-0 bg-gradient-to-br from-teal-500/10 to-blue-500/10 dark:from-teal-400/10 dark:to-blue-400/10 rounded-2xl' />
+                                <div className='relative p-6 rounded-2xl border border-gray-200/50 dark:border-gray-700/50'>
+                                    <div className='flex flex-col items-center'>
+                                        <div className={`${skill.color} mb-4 transform transition-transform duration-300 group-hover:scale-110`}>{skill.icon}</div>
+                                        <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>{skill.name}</h3>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
